@@ -1,0 +1,18 @@
+<configuration>
+
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} - %msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- 특정 패키지의 로그 레벨을 설정할 수 있습니다 -->
+    <logger name="com.aykwon.peakdifference.maxpointdiff" level="DEBUG" />
+
+</configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aykwon.peakdifference.maxpointdiff.mappers.PointMapper">
+	<resultMap id="BaseResultMap" type="com.aykwon.peakdifference.maxpointdiff.model.Point">
+		<id property="st_id" column="st_id" />
+		<result property="idx_x" column="idx_x" />
+		<result property="idx_y" column="idx_y" />
+		<result property="lon" column="lon" />
+		<result property="lat" column="lat" />
+	</resultMap>
+	
+	<select id="checkTable" resultType="boolean">
+		SELECT check_table_exists(#{tableName})
+	</select>
+</mapper>
