@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aykwon.peakdifference.maxpointdiff.model.Point;
 import com.aykwon.peakdifference.maxpointdiff.service.PointService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,12 +22,7 @@ public class PointController {
     
 	@Autowired
 	private PointService pointService;
-
-	@GetMapping("/getAllModel")
-	public List<String> getMethodName() {
-		return pointService.getAllModelTable();
-	}
-
+	
 	@PostMapping("check_table")
 	public boolean checkTable(@RequestBody MultiValueMap<String, Object> requestBody) {
 		String name = (String) requestBody.getFirst("name");
@@ -35,9 +31,8 @@ public class PointController {
 	}
 
 	@PostMapping("maxPointDiff")
-	public String getMaxPoint(@RequestParam  MultiValueMap<String, Object> requestBody) {
-		
-		return "test";
+	public String[] getMaxPoint(@RequestParam  MultiValueMap<String, Object> requestBody) {
+		return pointService.getMaxPoint((String) requestBody.getFirst("name"));
 	}
 	
     

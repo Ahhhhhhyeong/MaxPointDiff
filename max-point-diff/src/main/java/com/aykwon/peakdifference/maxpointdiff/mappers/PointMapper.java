@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.aykwon.peakdifference.maxpointdiff.model.Point;
+
 @Mapper
 public interface PointMapper {   
-    List<String> getAllModelTable();
     boolean checkTable(String tableName);
+    List<Point> getAllPoint(String tableName);
 }

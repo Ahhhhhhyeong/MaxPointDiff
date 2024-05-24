@@ -14,4 +14,12 @@
 	<select id="checkTable" resultType="boolean">
 		SELECT check_table_exists(#{tableName})
 	</select>
+
+	<select id="getAllPoint" resultType="Point">
+		select st_id, latitude as lat, longitude as lon, idx_x, idx_y 
+		from ${tableName} 
+		where st_id = (select max(st_id) from ${tableName})
+		order by st_id;
+	</select>
+
 </mapper>
