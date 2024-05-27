@@ -10,4 +10,6 @@ import com.aykwon.peakdifference.maxpointdiff.model.Point;
 public interface PointMapper {   
     boolean checkTable(String tableName);
     List<Point> getAllPoint(String tableName);
+    int getMaxXPoint(String tableName);
+    int getMaxYPoint(String tableName);
 }

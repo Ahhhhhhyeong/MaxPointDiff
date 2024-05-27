@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/pointAjax.js"></script>
-    <title>모델 최대 차 구하기</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+	<script src="./js/pointAjax.js"></script>
+	<title>모델 최대 차 구하기</title>
 </head>
 <body>
-    <div class="enterModelData" id="enterModelData">
-        <h3>모델 데이터 입력</h3>
-        <label for="tableName">테이블 이름:</label>
-        <input type="text" id="tableName">
-        <buton id="checkButton">확인</buton>
-        <p id="result"></p>
-    </div>
-    <br/><br/>
-    <p id="maxPoint"></p>
+	<div id="loading-spinner" class="spinner-overlay">
+		<div class="spinner">
+		</div>
+	</div>
+	<div class="enterModelData" id="enterModelData">
+		<h3>모델 데이터 입력</h3>
+		<label for="tableName">테이블 이름:</label>
+		<input type="text" id="tableName">
+		<buton id="checkButton">확인</buton>
+		<p id="result"></p>
+	</div>
+	<br/><br/>
+	<p id="maxPoint"></p>
 </body>
 </html>

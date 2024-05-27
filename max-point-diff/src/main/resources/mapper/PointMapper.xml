@@ -16,10 +16,19 @@
 	</select>
 
 	<select id="getAllPoint" resultType="Point">
-		select st_id, latitude as lat, longitude as lon, idx_x, idx_y 
+		SELECT st_id, latitude as lat, longitude as lon, idx_x, idx_y 
 		from ${tableName} 
 		where st_id = (select max(st_id) from ${tableName})
 		order by st_id;
 	</select>
+
+	<select id="getMaxXPoint" resultType="int">
+		SELECT MAX(idx_x) FROM ${tableName}
+	</select>
+
+	<select id="getMaxYPoint" resultType="int">
+		SELECT MAX(idx_y) FROM ${tableName}
+	</select>
+
 
 </mapper>
