@@ -22,11 +22,12 @@ public class PointController {
 	@PostMapping("check_table")
 	public boolean checkTable(@RequestBody MultiValueMap<String, Object> requestBody) {
 		String name = (String) requestBody.getFirst("name");
+		@SuppressWarnings("null")
 		boolean result = pointService.checkTable(name.toString());
 		return result;
 	}
 
-	@PostMapping("maxPointDiff")
+	@PostMapping("/maxPointDiff")
 	public String[] getMaxPoint(@RequestBody Map<String, String> requestBody) {
 		String name = requestBody.get("name");
 		System.out.println(name);
