@@ -1,18 +1,29 @@
 <configuration>
 
-    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} - %msg%n"/>
+	<property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} - %msg%n"/>
+	<property name="LOG_FILE" value="/path/to/your/logfile.log"/>
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>${LOG_PATTERN}</pattern>
-        </encoder>
-    </appender>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
 
-    <root level="DEBUG">
-        <appender-ref ref="STDOUT" />
-    </root>
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${LOG_FILE}</file>
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
 
-    <!-- 특정 패키지의 로그 레벨을 설정할 수 있습니다 -->
-    <logger name="com.aykwon.peakdifference.maxpointdiff" level="DEBUG" />
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+
+	<!-- 특정 패키지의 로그 레벨을 설정할 수 있습니다 -->
+	<logger name="com.aykwon.peakdifference.maxpointdiff" level="DEBUG">
+		<appender-ref ref="FILE" />
+	</logger>
 
 </configuration>
