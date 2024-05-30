@@ -10,12 +10,12 @@
 	</parent>
 	<groupId>com.aykwon.peakdifference.maxpointdiff</groupId>
 	<artifactId>max-point-diff</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>max-point-diff</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 
